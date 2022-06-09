@@ -1,0 +1,12 @@
+%underline {
+	position: absolute;
+	left: 0;
+	background-color: $color-louvre-red;
+	content: "";
+}
+
+%section-disign {
+	background: $color-background-light;
+	padding-top: $section-padding;
+	padding-bottom: $section-padding;
+}

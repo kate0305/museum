@@ -1,0 +1,20 @@
+.map {
+	max-width: 960px;
+	max-height: 620px;
+	@include big-tablet {
+		max-width: 694px;
+		max-height: 464px;
+		padding-bottom: 4px;
+	}
+	@include tablet {
+		max-width: 728px;
+		max-height: 476px;
+		margin-top: 12px;
+		margin-bottom: 12px;
+	}
+	@include mobile {
+		max-width: 380px;
+		max-height: 248px;
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,68 @@
+.contacts {
+  @extend %section-disign;
+	@include big-tablet {
+		padding-top: $section-padding-tablet-big;
+		padding-bottom: $section-padding-tablet-big;
+	}
+	@include tablet {
+		padding-top: $section-padding-tablet;
+		padding-bottom: $section-padding-tablet;
+	}
+}
+
+.contacts__content {
+	@include flex;
+	@include tablet {
+		flex-wrap: wrap;
+	}
+}
+
+.contacts__list {
+	color: $color-font-dark;
+	font-family: "Roboto";
+	@include font($weight: 500, $size: 28px, $height: 33px);
+	li:nth-child(2) {
+		padding-bottom: 50px;
+		@include big-tablet {
+      padding-bottom: 35px;
+		}
+		@include tablet {
+      padding-bottom: 40px;
+		}
+	}
+	@include big-tablet {
+		font-size: 24px;
+		line-height: 28px;
+	}
+	@include tablet {
+		font-size: 20px;
+		line-height: 23px;
+	}
+	@include mobile {
+		font-size: 16px;
+		line-height: 19px;
+	}
+}
+
+.contacts__link {
+	color: $color-font-dark;
+	display: block;
+	margin-bottom: 25px;
+	font-family: "Roboto";
+	@include font($size: 22px, $height: 26px);
+	@include big-tablet {
+		font-size: 20px;
+		line-height: 23px;
+		margin-bottom: 15px;
+	}
+	@include tablet {
+		font-size: 18px;
+		line-height: 21px;
+		margin-bottom: 15px;
+	}
+	@include mobile {
+		font-size: 16px;
+		line-height: 19px;
+	}
+}
+

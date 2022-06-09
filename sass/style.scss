@@ -1,0 +1,22 @@
+@import "abstracts/variables";
+@import "abstracts/placeholders";
+@import "abstracts/mixins";
+
+@import "base/base";
+@import "base/fonts";
+
+@import "components/button-top";
+@import "components/contacts";
+@import "components/explore";
+@import "components/gallery";
+@import "components/map";
+@import "components/parallax";
+@import "components/tickets";
+@import "components/video";
+@import "components/visiting";
+@import "components/welcome";
+
+@import "components/burger-menu";
+
+@import "layout/footer";
+@import "layout/header";

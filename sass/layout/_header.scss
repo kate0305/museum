@@ -1,0 +1,191 @@
+.header {
+	background: $color-background-dark;
+	padding-top: 60px;
+	padding-bottom: 59px;
+	@include big-tablet {
+		padding-top: 49px;
+		padding-bottom: 48px;
+	}
+	@include tablet {
+		padding-top: 35px;
+		padding-bottom: 25px;
+		//width: 100%;
+		//position: fixed;
+		//z-index: 20
+	}
+}
+
+.header__wrapper {
+	@include flex;
+	align-items: center;
+}
+
+.logo {
+	display: block;
+	text-decoration: none;
+	background-image: url("assets/svg/logo.svg");
+	background-repeat: no-repeat;
+	background-position: left top 10px;
+	&:hover {
+		filter: invert(51%) sepia(43%) saturate(287%) hue-rotate(356deg) brightness(98%) contrast(85%);
+		transition: all 0.2s ease-out;
+	}
+	@include tablet {
+		background-position: left top 7px;
+	}
+	@include mobile {
+		background-size: 29px 16px;
+		background-position: left top;
+	}
+}
+
+.logo__text {
+	padding-left: 74px;
+	font-family: "Forum";
+	@include font($weight: normal, $size: 28px, $height: 31px);
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	color: $color-font-light;
+	@include tablet {
+		line-height: 50px;
+	}
+	@include mobile {
+		@include font($size: 16px, $height: 18px);
+		padding-left: 57px;
+	}
+}
+
+.header-navigation {
+	flex-grow: 1;
+	max-width: 775px;
+	@include big-tablet {
+		position: absolute;
+		left: -100%;
+		top: 128px;
+		width: 297px;
+		height: 585px;
+		padding: 0;
+		background-color: $color-font-dark;
+		transition: left 0.2s ease;
+		overflow: scroll;
+	  &.active {
+			left: 0;
+			z-index: 3;
+		}
+		@include tablet {
+			position: absolute;
+			top: 110px;
+			width: 100%;
+			height: 900px;
+		}
+		@include mobile {
+    	top: 90px;
+			height: 544px;
+		}
+	}
+}
+
+.navigation {
+	@include flex;
+	align-items: center;
+	font-family: "Roboto";
+	@include font($weight: 100, $size: 22px, $height: 26px);
+	letter-spacing: 2px;
+	color: $color-font-light;
+	.footer-navigation__links {
+		display: block;
+	}
+	@include big-tablet {
+		flex-direction: column;
+		align-items: start;
+		padding-top: 35px;
+		padding-left: 55px;
+		@include font($weight: 300, $size: 20px, $height: 23px);
+		>li {
+			margin-bottom: 13px;
+		}
+	}
+	@include tablet {
+		>li:last-child {
+			margin-bottom: 22px;
+		}
+	}
+}
+
+.navigation__link {
+	color: $color-font-light;
+	&:hover {
+		color: $color-font-gold;
+		transition: all 0.2s ease-out;
+	}
+	@include big-tablet {
+		margin-bottom: 25px;
+/* 		&:last-child {
+			margin-bottom: 0;
+		} */
+	}
+}
+
+.navigation__link_header::after {
+	@include big-tablet {
+		position: relative;
+		left: 109px;
+		bottom: 18px;
+		display: block;
+		width: 12px;
+		height: 12px;
+		background-image: url("assets/svg/arrow-burger.svg");
+		content: "";
+		cursor: pointer;
+	}
+}
+
+.header-picture {
+	display: none;
+	@include tablet {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		padding-left: 55px;
+		padding-bottom: 35px;
+	}
+	&:nth-child(1) {
+		@include mobile {
+			display: none;
+		}
+	}
+	@include mobile {
+		gap: 13px;
+		padding-bottom: 20px;
+		height: 95px;
+	}
+}
+
+.header-socials {
+	display: none;
+	@include tablet {
+		display: block;
+		margin: 0 auto;
+		padding-top: 35px;
+		max-width: 340px;
+		text-align: center;
+	}
+	@include mobile {
+		max-width: 260px;
+		padding-top: 25px;
+	}
+}
+
+.header__line {
+	display: none;
+	@include tablet {
+		display: block;
+		width: 86%;
+		height: 1px;
+		margin-left: 55px;
+	}
+	@include mobile {
+		margin-top: 25px;
+		width: 74%;
+	}
+}

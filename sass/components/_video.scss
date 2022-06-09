@@ -1,0 +1,346 @@
+.video {
+	@extend %section-disign;
+	@include big-tablet {
+		padding-top: $section-padding-tablet-big;
+		padding-bottom: $section-padding-tablet-big;
+	}
+	@include tablet {
+		padding-top: $section-padding-tablet;
+		padding-bottom: $section-padding-tablet;
+	}
+}
+
+.video__image {
+	display: block;
+}
+
+.video__content {
+	display: flex;
+	column-gap: 115px;
+	align-items: center;
+	margin-bottom: 75px;
+  @include big-tablet {
+		margin-bottom: 41px;
+	}
+	@include tablet {
+		margin-bottom: 20px;
+	}
+}
+
+.video__text {
+	font-family: "Roboto";
+	@include font($size: 22px, $height: 38px);
+	color: $color-font-dark;
+	@include big-tablet {
+		display: none;
+	}
+}
+
+.video__main {
+	position: relative;
+  display: block;
+	//max-width: 1440px;
+	height: 100%;
+	>video {
+		max-width: 100%;
+	}
+}
+
+.video__main_play {
+	position: absolute;
+	top: 215px;
+	left: 610px;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	width: 220px;
+	height: 220px;
+	background-image: url("assets/svg/controls/play-icon.svg");
+	background-size: 100%;
+	@include big-tablet {
+		width: 152px;
+		height: 152px;
+		top: 32.5%;
+		left: 42.4%;
+	}
+	@include tablet {
+		width: 80px;
+		height: 80px;
+		top: 37%;
+		left: 44.5%;
+	}
+	@include mobile {
+		width: 50px;
+		height: 50px;
+		top: 37%;
+		left: 44.5%;
+	}
+}
+
+.video__main_play:hover {
+  filter: invert(68%) sepia(16%) saturate(10%) hue-rotate(326deg) brightness(87%) contrast(88%);
+  transition: all 0.2s ease-out;
+}
+
+.controls {
+	position: relative;
+	bottom: 4px;
+	padding: 25px 30px;
+	@include flex;
+	align-items: center;
+	background: $color-background-dark;
+	>button {
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		&.controls__play {
+			width: 23px;
+			height: 31px;
+			background-image: url("assets/svg/controls/play-mini-icon.svg");
+			background-size: 100%;
+			@include big-tablet {
+				height: 30px;
+			}
+			@include mobile {
+				width: 14px;
+				height: 18px;
+			}
+		}
+    &.controls__volume {
+			width: 38px;
+			height: 31px;
+			background-image: url("assets/svg/controls/volume-icon.svg");
+			background-size: 100%;
+			@include big-tablet {
+				width: 26px;
+				height: 20px;
+			}
+			@include mobile {
+				width: 18px;
+				height: 14px;
+			}
+		}
+		&.controls__fullscreen {
+			width: 35px;
+			height: 35px;
+			background-image: url("assets/svg/controls/fullscreen-icon.svg");
+			background-size: 100%;
+			@include big-tablet {
+				width: 26px;
+				height: 26px;
+			}
+			@include mobile {
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
+	>button:hover {
+    filter: invert(68%) sepia(16%) saturate(10%) hue-rotate(326deg) brightness(87%) contrast(88%);
+    transition: all 0.2s ease-out;
+	}
+	>input {
+		display: block;
+		height: 8px;
+		background: linear-gradient(to right, #710707 0%, #710707 0%, #c4c4c4 0%, #c4c4c4 100%);
+		transition: all 0.2s ease-in;
+    appearance: none;
+		cursor: pointer;
+		@include mobile {
+			height: 4px;
+		}
+		&.duration {
+			width: 62.3%;
+			@include tablet {
+				position: absolute;
+				left: 0;
+				top: -4px;
+				width: 100%;
+			}
+		}
+		&.volume {
+			width: 16%;
+			@include tablet {
+				width: 73%;
+			}
+			@include mobile {
+				width: 58.7%;
+			}
+		}
+		&::-webkit-slider-thumb {
+			position: relative;
+		  //right: 1px;
+		  -webkit-appearance: none;
+		  height: 15px;
+		  width: 15px;
+		  border-radius: 50%;
+		  background: $color-background-light;
+		  cursor: ew-resize;
+			@include big-tablet {
+				width: 13px;
+				height: 13px;
+			}
+			@include mobile {
+				width: 10px;
+				height: 10px;
+			}
+		}
+		&::-moz-range-thumb {
+			position: relative;
+		  //right: 1px;
+			height: 15px;
+			width: 15px;
+			border-radius: 50%;
+			background: $color-background-light;
+			cursor: ew-resize;
+			@include big-tablet {
+				width: 13px;
+				height: 13px;
+			}
+			@include mobile {
+				width: 10px;
+				height: 10px;
+			}
+		}
+		@include big-tablet {
+			height: 5px;
+		}
+	}
+	@include big-tablet {
+		padding: 15px 40px;
+	}
+	@include tablet {
+		padding: 12px 30px;
+	}
+	@include mobile {
+		padding: 15px 20px;
+	}
+}
+
+.video__slider {
+	padding-top: 40px;
+	@include big-tablet {
+		padding-top: 36px;
+	}
+	@include tablet {
+		padding-top: 20px;
+	}
+	@include mobile {
+		padding-top: 40px;
+		min-width: 100%;
+	}
+}
+
+.video__slider_items {
+	@include flex;
+	@include big-tablet {
+		height: 170px;
+	}
+	@include tablet {
+		height: 199px;
+	}
+	>:nth-child(3) {
+		@include tablet {
+			display: none;
+		}
+	}
+	@include mobile {
+		height: 101px;
+	}
+}
+
+.video__slider_item {
+	height: 100%;
+	@include tablet {
+		width: 49%;
+	}
+	@include mobile {
+		width: 47%;
+	}
+}
+
+.video-slider__control {
+	position: relative;
+	left: 43%;
+  padding-top: 40px;
+	width: 200px;
+	@include flex($display: inline-flex);
+	align-items: center;
+	@include big-tablet {
+		left: 40%;
+	}
+	@include tablet {
+		left: 37%;
+    padding-top: 20px;
+		padding-bottom: 40px;
+	  width: 193px;
+	}
+	@include mobile {
+		left: 27%;
+    padding-top: 40px;
+		padding-bottom: 0;
+	  width: 174px;
+	}
+}
+
+.video-slider__arrow {
+	width: 10px;
+	height: 12px;
+	background: transparent;
+	border: none;
+	background-image: url("assets/svg/video-arrow.svg");
+	//background-size: 10px 12px;
+	background-repeat: no-repeat;
+	background-position: contain;
+	cursor: pointer;
+	&:hover {
+		filter: invert(17%) sepia(20%) saturate(7284%) hue-rotate(342deg) brightness(80%) contrast(114%);
+		transition: all 0.2s ease-out;
+	}
+	@include mobile {
+		width: 7px;
+	  height: 8px;
+		background-size: 7px 8px;
+	}
+}
+
+.video-slider__arrow_left {
+	transform: rotate(-180deg);
+}
+
+.video-slider__bullet {
+	margin: 0;
+	width: 140px;
+	display: inline-flex;
+	justify-content: space-between;
+/* 	@include tablet {
+		width: 130px;
+	} */
+	@include mobile {
+		width: 120px;
+	}
+}
+
+.video-slider__bullet_item {
+	&::before {
+		display: block;
+		width: 12px;
+		height: 12px;
+		background-color: #999999;
+		border-radius: 50%;
+		content: "";
+		cursor: pointer;
+		@include tablet {
+			width: 10px;
+			height: 10px;
+		}
+		@include mobile {
+			width: 8px;
+			height: 8px;
+		}
+	}
+	&:hover::before {
+		background-color: $color-louvre-red;
+		transition: all 0.2s ease-out;
+	}
+}

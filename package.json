@@ -1,0 +1,20 @@
+{
+  "name": "museum",
+  "version": "1.0.0",
+  "description": "landing museum",
+  "main": "index.js",
+  "scripts": {
+    "style": "npx sass --watch museum/sass/style.scss museum/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kate0305/museum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kate0305/museum/issues"
+  },
+  "homepage": "https://github.com/kate0305/museum#readme"
+}

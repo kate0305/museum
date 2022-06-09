@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+ul {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1480px;
+	padding-left: 20px;
+	padding-right: 20px;
+	@include big-tablet {
+		max-width: 1024px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	@include tablet {
+		max-width: 768px;
+	}
+	@include mobile {
+		max-width: 420px;
+	}
+}
+
+.section__title {
+	font-family: "Forum";
+	@include font($weight: normal, $size: 80px, $height: 90px);
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	@include big-tablet {
+		@include font($size: 50px, $height: 75px);
+	}
+	@include tablet {
+		@include font($size: 40px, $height: 60px);
+	}
+	@include mobile {
+		@include font($size: 28px, $height: 40px);
+	}
+}
+
+.section__title-underline {
+	position: relative;
+	margin-bottom: 103px;
+	font-family: "Forum";
+	@include font($weight: normal, $size: 80px, $height: 90px);
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	@include big-tablet {
+		margin-bottom: 82px;
+		@include font($size: 50px, $height: 75px);
+	}
+	@include tablet {
+		margin-bottom: 63px;
+		@include font($size: 40px, $height: 60px);
+	}
+	@include mobile {
+		@include font($size: 28px, $height: 40px);
+	}
+}
+
+.section__title-underline::after {
+	@extend %underline;
+	bottom: -25px;
+	height: 3px;
+	right: 0;
+	@include big-tablet {
+		bottom: -25px;
+	}
+	@include tablet {
+		//bottom: -22px;
+	}
+	@include mobile {
+		bottom: -20px;
+	}
+}
+
+.section__title_colored {
+	color: $color-font-gold;
+}
+
+.section__title_light {
+	color: $color-font-light;
+}
+
+
+
+
+
+
+
+
+
+
+
+

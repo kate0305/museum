@@ -1,0 +1,232 @@
+.tickets {
+	@extend %section-disign;
+	color: $color-font-dark;
+	@include big-tablet {
+		padding-top: $section-padding-tablet-big;
+		padding-bottom: $section-padding-tablet-big;
+	}
+	@include tablet {
+		padding-top: $section-padding-tablet;
+		padding-bottom: $section-padding-tablet;
+	}
+}
+
+.tickets__content {
+	@include flex;
+	font-family: "Roboto";
+	font-style: normal;
+	@include tablet {
+		align-items: start;
+	}
+	@include mobile {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.tickets__choice-type {
+	margin-left: 59px;
+	@include big-tablet {
+		display: none;
+	}
+}
+
+.tickets__choice-title {
+	margin-bottom: 50px;
+	@include font($weight: bold, $size: 28px, $height: 33px);
+	@include mobile {
+		@include font($weight: bold, $size: 16px, $height: 18px);
+	}
+}
+
+.checkbox {
+	position: absolute;
+	z-index: -10;
+	opacity: 0;
+	&+label {
+		position: relative;
+    padding-left: 40px;
+		margin-bottom: 25px;
+		display: inline-block;
+		align-items: center;
+		user-select: none;
+		cursor: pointer;
+		&::before {
+			position: absolute;
+			left: 0;
+			top: 4px;
+			content: '';
+			width: 17px;
+			height: 17px;
+			box-sizing: border-box;
+			border: 2px solid #000000;
+			border-radius: 50%;
+		}
+	}
+	&:checked+label::after {
+		content: '';
+		width: 7px;
+		height: 7px;
+		background: $color-background-dark;
+		position: absolute;
+		top: 9px;
+		left: 5px;
+		border-radius: 50%;
+		transition: all 0.2s ease;
+	}
+}
+
+.tickets__content-text {
+	@include font($size: 22px, $height: 26px);
+	@include mobile {
+		@include font($size: 16px, $height: 19px);
+	}
+}
+
+.tickets__choice-amount {
+	margin-left: 238px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	@include big-tablet {
+		margin-left: 0;
+		padding-right: 29px;
+	  align-items: flex-start;
+	}
+	@include tablet {
+		padding-right: 49px;
+	}
+	@include mobile {
+		padding-top: 40px;
+		padding-right: 0;
+		width: 175px;
+	}
+}
+
+.buy {
+	@include flex($jc: center);
+	align-items: center;
+	padding: 12px 38px;
+	font-family: "Roboto";
+	@include font($size: 22px, $height: 26px);
+	text-align: center;
+	letter-spacing: 2px;
+	background: $color-font-dark;
+	border-radius: 2px;
+	border-style: none;
+	color: $color-font-light;
+	cursor: pointer;
+	&:hover {
+		color: $color-font-dark;
+		background: $color-font-gold;
+		transition: all 0.2s ease-out;
+	}
+	@include mobile {
+		@include font($size: 16px, $height: 0);
+		padding-top: 24px;
+		padding-bottom: 24px;
+		width: 100%;
+	}
+}
+
+.choice-amount {
+	width: 100%;
+	@include big-tablet {
+		//padding-top: 4px;
+	}
+}
+
+.amount {
+	width: 150px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	@include flex($jc: space-around);
+	align-items: center;
+	border: 3px solid $color-font-dark;
+	@include big-tablet {
+		width: 100%;
+		margin-top: 10px;
+		margin-bottom: 27px;
+	}
+	@include mobile {
+		margin-top: 15px;
+		margin-bottom: 20px;
+	}
+}
+
+.number {
+	padding-top: 9px;
+	padding-bottom: 9px;
+	font-family: "Roboto";
+	@include font ($size: 22px, $height: 26px);
+	text-align: center;
+	border: none;
+	outline: none;
+	&::-webkit-inner-spin-button,
+	::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+    margin: 0;
+	}
+	
+}
+
+.tickets__buy {
+	padding: 3px 0;
+	font-family: "Roboto";
+	@include font ($size: 32px, $height: 37px, $weight: normal);
+	text-align: center;
+	cursor: pointer;
+	border: none;
+  background: transparent;
+	&:active {
+		transform: scale(1.1);
+	}
+}
+
+.tickets__choice-title_amount {
+	margin-bottom: 29px;
+	@include tablet {
+		margin-bottom: 38px;
+	}
+	@include mobile {
+		padding-left: 58px;
+		margin-bottom: 20px;
+	}
+}
+
+.tickets__choice-title_total {
+	margin-top: 40px;
+	margin-bottom: 59px;
+	letter-spacing: 1.65px;
+	@include big-tablet {
+		margin-top: 0;
+		margin-bottom: 69px;
+		.total {
+			padding-left: 14px;
+			@include mobile {
+				padding-left: 5px;
+			}
+		}
+	}
+	@include tablet {
+		margin-top: 12px;
+		margin-bottom: 40px;
+	}
+	@include mobile {
+		margin-top: 21px;
+		padding-left: 47px;
+		letter-spacing: 0;
+	}
+}
+
+.tickets__image {
+	@include tablet {
+		height: 100%;
+	}
+	@include mobile {
+		height: inherit;
+	}
+	@include small {
+		width: 98%;
+	}
+}

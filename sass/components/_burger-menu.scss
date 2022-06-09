@@ -1,0 +1,47 @@
+.header__menu-icon {
+  display: none;
+  @include big-tablet {
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 18px;
+    cursor: pointer;
+    &::before,
+    &::after,
+    >span {
+      position: absolute;
+      left: 0;  
+      height: 2px;
+      width: 100%;
+      transition:  all 0.3s ease 0s;
+      content: '';
+      background-color: $color-background-light;
+    }
+    &::before { top: 0;}
+    &::after { bottom: 0;}
+    >span {
+     top: 50%;
+     transform: scale(1) translate(0px, -50%);
+    }
+
+  &.active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+
+  &.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+
+  &.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+  }
+  @include tablet {
+    bottom: 5px;
+  }
+  @include mobile {
+    bottom: 0;
+  }
+}

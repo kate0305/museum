@@ -1,0 +1,15 @@
+.button__top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  background-image: url("assets/svg/button-top.svg");
+  filter: invert(47%) sepia(39%) saturate(6%) hue-rotate(345deg) brightness(98%) contrast(81%);
+  z-index: 100;
+  cursor: pointer;
+  &:hover {
+    filter: invert(51%) sepia(43%) saturate(287%) hue-rotate(356deg) brightness(98%) contrast(85%);
+		transition: all 0.2s ease-out;
+  }
+}
